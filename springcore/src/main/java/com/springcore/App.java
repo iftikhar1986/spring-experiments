@@ -12,7 +12,7 @@ public class App
     public static void main( String[] args )
     {
     	// Load the Spring application context from the XML configuration file
-    	ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+    	ApplicationContext context = new ClassPathXmlApplicationContext("com/springcore/studentapplicationContext.xml");
 
     	// Retrieve the Student bean by its id
     	Student firstStudentBean = (Student) context.getBean("firstStudentBean");

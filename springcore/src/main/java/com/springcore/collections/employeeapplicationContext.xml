@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- Define the XML configuration file for Spring, usually named applicationContext.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/util 
+           http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- Enable component scanning for Spring components (if necessary) -->
+    <context:component-scan base-package="com.springcore"/>
+
+    <!-- Define a bean for the First Student class -->
+   <!--  <bean id="firstStudentBean" class="com.springcore.Student" name="firstStudentBean">
+        
+        Initialize properties of the Student bean
+        <property name="studentId" value="101"/>
+        <property name="studentName" value="Syed Iftikhar"/>
+        <property name="studentAddress" value="Doha, Qatar"/>
+    
+    </bean> -->
+    
+    <!-- Define a bean for the Second Student class -->
+    <!-- <bean id="secondStudentBean" class="com.springcore.Student" name="secondStudentBean">
+        
+        Initialize properties of the Student bean
+        <property name="studentId" value="102"/>
+        <property name="studentName" value="Syed Hassan"/>
+        <property name="studentAddress" value="Alwakra, Qatar"/>
+    
+    </bean> -->
+    
+    
+      <!-- Define a bean for the first Student object with properties using 'p' schema syntax -->
+    <bean id="firstStudentBean" class="com.springcore.Student"
+          p:studentId="101" 
+          p:studentName="Syed Iftikhar" 
+          p:studentAddress="Doha, Qatar" />
+
+    <!-- Define a bean for the second Student object with properties using 'p' schema syntax -->
+    <bean id="secondStudentBean" class="com.springcore.Student"
+          p:studentId="102" 
+          p:studentName="Syed Hassan" 
+          p:studentAddress="Alwakra, Qatar" />
+          
+          
+          
+           <!-- Define the Employee bean with sample data using the 'p' schema for properties -->
+
+    <bean id="employeeBean" class="com.springcore.collections.Employee"
+          p:name="Syed Hussian"
+          p:phones-ref="phoneList"
+          p:address-ref="addressSet"
+          p:courses-ref="courseMap" />
+
+  <!-- Define a List of phone numbers -->
+    <util:list id="phoneList">
+        <value>55523243</value>
+        <value>77723243</value>
+        <value>03336222229</value>
+    </util:list>
+    
+    <!-- Define a Set of addresses -->
+    <util:set id="addressSet">
+        <value>Al-Rayyan - Doha, Qatar</value>
+        <value>Al-Masoora - Doha, Qatar</value>
+        <value>Al-Dafna - Doha, Qatar</value>
+    </util:set>
+
+    <!-- Define a Map of courses with course name as key and description as value -->
+    <util:map id="courseMap">
+        <entry key="Java" value="Comprehensive Java programming course"/>
+        <entry key="Spring" value="Spring framework fundamentals"/>
+        <entry key="Database" value="Introduction to databases"/>
+    </util:map>
+
+</beans>
