@@ -17,14 +17,37 @@
     <!-- Enable component scanning for Spring components (if necessary) -->
     <context:component-scan base-package="com.springcore"/>
 
-    <!-- Define a bean for the Student class -->
-    <bean id="studentBean" class="com.springcore.Student" name="studentBean">
+    <!-- Define a bean for the First Student class -->
+   <!--  <bean id="firstStudentBean" class="com.springcore.Student" name="firstStudentBean">
         
-        <!-- Initialize properties of the Student bean -->
+        Initialize properties of the Student bean
         <property name="studentId" value="101"/>
         <property name="studentName" value="Syed Iftikhar"/>
         <property name="studentAddress" value="Doha, Qatar"/>
     
-    </bean>
+    </bean> -->
+    
+    <!-- Define a bean for the Second Student class -->
+    <!-- <bean id="secondStudentBean" class="com.springcore.Student" name="secondStudentBean">
+        
+        Initialize properties of the Student bean
+        <property name="studentId" value="102"/>
+        <property name="studentName" value="Syed Hassan"/>
+        <property name="studentAddress" value="Alwakra, Qatar"/>
+    
+    </bean> -->
+    
+    
+      <!-- Define a bean for the first Student object with properties using 'p' schema syntax -->
+    <bean id="firstStudentBean" class="com.springcore.Student"
+          p:studentId="101" 
+          p:studentName="Syed Iftikhar" 
+          p:studentAddress="Doha, Qatar" />
+
+    <!-- Define a bean for the second Student object with properties using 'p' schema syntax -->
+    <bean id="secondStudentBean" class="com.springcore.Student"
+          p:studentId="102" 
+          p:studentName="Syed Hassan" 
+          p:studentAddress="Alwakra, Qatar" />
 
 </beans>

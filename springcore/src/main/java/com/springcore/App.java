@@ -15,9 +15,13 @@ public class App
     	ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
     	// Retrieve the Student bean by its id
-    	Student student = (Student) context.getBean("studentBean");
+    	Student firstStudentBean = (Student) context.getBean("firstStudentBean");
+    	Student secondStudentBean = (Student) context.getBean("secondStudentBean");
 
+    	
     	// Use the Student object
-    	System.out.println(student);
+    	System.out.println(firstStudentBean);
+    	System.out.println(secondStudentBean);
+
     }
 }
