@@ -13,5 +13,18 @@ public class App {
 
         // Print the person details
         System.out.println(person);
+        
+        
+     // Retrieve and test the 'additionInt' bean
+        Addition additionInt = (Addition) context.getBean("additionInt");
+        additionInt.doSum();
+
+        // Retrieve and test the 'additionDouble' bean
+        Addition additionDouble = (Addition) context.getBean("additionDouble");
+        additionDouble.doSum();
+        
+        // Retrieve and test the 'additionDouble' bean
+        Addition additionString = (Addition) context.getBean("additionString");
+        additionString.doSum();
     }
 }
