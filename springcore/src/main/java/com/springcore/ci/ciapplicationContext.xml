@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/util 
+           http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- Define the bean for the Certificate class -->
+<!--     <bean id="certificate" class="com.springcore.ci.Certificate" c:certificate="Java Certification"/>
+ -->
+    <!-- Define the bean for the Person class using c schema constructor injection -->
+    <!-- <bean id="person" class="com.springcore.ci.Person" 
+          c:name="Syed Iftikhar" 
+          c:personid="101" 
+          c:certificate-ref="certificate"/>  -->
+
+   <!-- Define the bean for the Certificate class -->
+    <bean id="certificate" class="com.springcore.ci.Certificate" c:certificate="Java Certification" />
+        
+
+
+    <!-- Define the bean for the Person class using constructor injection -->
+    <bean id="person" class="com.springcore.ci.Person" >
+        <constructor-arg value="Syed Iftikhar"/>
+        <constructor-arg value="101"/>
+        <constructor-arg ref="certificate"/>
+    </bean>
+
+</beans>
