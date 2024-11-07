@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- Define the XML configuration file for Spring, usually named applicationContext.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/util 
+           http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- Enable component scanning for Spring components (if necessary) -->
+    <context:component-scan base-package="com.springcore"/>
+
+     <!-- Define bean for class B -->
+    <bean id="b" class="com.springcore.ref.B" name="b" p:y="31">
+        <!-- Initialize property 'y' of class B -->
+       <!--  <property name="y" value="10"/> -->
+    </bean>
+
+    <!-- Define bean for class A -->
+    <bean id="a" class="com.springcore.ref.A" name="a" p:x="33" p:obj-ref="b">
+        <!-- Initialize property 'x' of class A -->
+        <!-- <property name="x" value="5"/> -->
+    </bean>
+
+</beans>
