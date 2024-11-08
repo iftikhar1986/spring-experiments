@@ -22,5 +22,10 @@
     <property name="price" value="3.99"/>
 	</bean>
     
+    
+     <bean id="pepsi" class="com.springcore.lifecycle.Pepsi">
+      <property name="price" value="2.50"/>
+   	</bean>
+    
 
 </beans>
