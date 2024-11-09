@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- Define the XML configuration file for Spring, usually named applicationContext.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/util 
+           http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- Enable component scanning for Spring components (if necessary) -->
+    <context:component-scan base-package="com.springcore"/>
+
+    
+   
+       <!-- Define the list of friends using util:list -->
+    <util:list id="myFriendsList" list-class="java.util.LinkedList">
+         <value>Ahsan</value>
+         <value>Mobeen</value>
+         <value>Imran</value>
+         <value>Asim</value>
+    </util:list>
+
+ <!-- Define the fee structure as a util:map -->
+    <util:map id="myFeeStructure" map-class="java.util.HashMap" >
+        <entry key="Tuition Fee" value="5000"/>
+        <entry key="Library Fee" value="1500"/>
+        <entry key="Lab Fee" value="2000"/>
+        <entry key="Sports Fee" value="1000"/>
+    </util:map>
+    
+     <!-- Define properties as a util:properties for additional settings or configurations -->
+    <util:properties id="personProperties">
+        <prop key="address">123 Spring Street</prop>
+        <prop key="contactNumber">0097455523243</prop>
+        <prop key="email">person@example.com</prop>
+    </util:properties>
+     
+    <!-- Bean definition for the Person class with injected friends list -->
+    <bean name="person" class="com.springcore.standalone.collections.Person">
+        <property name="friends" ref="myFriendsList"/>
+        <property name="feestructure" ref="myFeeStructure"/>
+        <property name="properties" ref="personProperties"/>
+                
+        
+    </bean>
+
+</beans>

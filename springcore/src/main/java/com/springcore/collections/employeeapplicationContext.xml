@@ -81,5 +81,19 @@
         <entry key="Spring" value="Spring framework fundamentals"/>
         <entry key="Database" value="Introduction to databases"/>
     </util:map>
+    
+    
+      <!-- Bean definition for the Person class -->
+    <!-- <bean id="person1" class="com.springcore.standalone.collections.Person">
+        <property name="friends">
+            <list>
+                <value>Ahsan</value>
+                <value>Mobeen</value>
+                <value>Imran</value>
+                <value>Asim</value>
+            </list>
+        </property>
+    </bean> -->
+    
 
 </beans>
