@@ -13,16 +13,21 @@ public class App {
         context.registerShutdownHook();
         
         // Retrieve the 'triangularPastry' bean
-        TriangularPastry pastry = (TriangularPastry) context.getBean("triangularPastry");
+//        TriangularPastry pastry = (TriangularPastry) context.getBean("triangularPastry");
 
         // Display the price of the Triangular Pastry to verify injection
-        System.out.println("The price of the Triangular Pastry is: $" + pastry.getPrice());
+//        System.out.println("The price of the Triangular Pastry is: $" + pastry.getPrice());
 
         // Retrieve the 'pepsi' bean
-        Pepsi pepsi = (Pepsi) context.getBean("pepsi");
+//        Pepsi pepsi = (Pepsi) context.getBean("pepsi");
 
         // Display the price of the Pepsi to verify injection
-        System.out.println("The price of the Pepsi is: $" + pepsi.getPrice());
+//        System.out.println("The price of the Pepsi is: $" + pepsi.getPrice());
+        
+        Course course  = (Course) context.getBean("course");
+        
+        System.out.println(course);
+
 
       
     }

@@ -18,14 +18,19 @@
     <!-- Enable component scanning for Spring components (if necessary) -->
     <context:component-scan base-package="com.springcore"/>
      
-    <bean id="triangularPastry" class="com.springcore.lifecycle.TriangularPastry" init-method="hi" destroy-method="bye">
+    <!-- <bean id="triangularPastry" class="com.springcore.lifecycle.TriangularPastry" init-method="hi" destroy-method="bye">
     <property name="price" value="3.99"/>
 	</bean>
     
     
      <bean id="pepsi" class="com.springcore.lifecycle.Pepsi">
       <property name="price" value="2.50"/>
-   	</bean>
+   	</bean> -->
+   	
+   	<!-- Define the Course bean with subject property injection -->
+    <bean id="course" class="com.springcore.lifecycle.Course">
+        <property name="subject" value="Mathematics"/>
+    </bean>
     
 
 </beans>
