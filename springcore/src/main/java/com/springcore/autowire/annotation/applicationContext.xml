@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/util 
+           http://www.springframework.org/schema/util/spring-util.xsd">
+
+<!-- Enable component scanning for Spring components (if necessary) -->
+    <context:component-scan base-package="com.springcore"/>
+
+  <!-- Define the Address bean -->
+    <bean id="address" class="com.springcore.autowire.annotation.Address">
+        <property name="street" value="123 Main St" />
+        <property name="city" value="Doha" />
+        <property name="zipCode" value="00000" />
+    </bean>
+
+    <!-- Define the  Employee bean and autowire by type -->
+    <bean id="employee" class="com.springcore.autowire.annotation.Employee" />
+
+</beans>

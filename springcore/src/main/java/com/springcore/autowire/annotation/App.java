@@ -1,4 +1,4 @@
-package com.springcore.autowire;
+package com.springcore.autowire.annotation;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -7,7 +7,7 @@ public class App {
 
     public static void main(String[] args) {
         // Load the Spring context from the XML configuration file
-        ApplicationContext context = new ClassPathXmlApplicationContext("com/springcore/autowire/applicationContext.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("com/springcore/autowire/annotation/applicationContext.xml");
 
         // Retrieve the 'employee' bean
         Employee employee = (Employee) context.getBean("employee");
