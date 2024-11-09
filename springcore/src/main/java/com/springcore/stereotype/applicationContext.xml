@@ -17,6 +17,13 @@
 
       <!-- Enable component scanning for Spring components in the specified package -->
     <context:component-scan base-package="com.springcore.stereotype" />
+    
+     <!-- Define the list of addresses using util:list -->
+    <util:list id="addressList" list-class="java.util.LinkedList">
+         <value>133 Doha</value>
+         <value>456 Rayyan</value>
+         <value>789 Wakra</value>
+    </util:list>
  
 
 </beans>
