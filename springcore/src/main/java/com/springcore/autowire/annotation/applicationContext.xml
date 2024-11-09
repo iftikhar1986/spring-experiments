@@ -23,6 +23,13 @@
         <property name="city" value="Doha" />
         <property name="zipCode" value="00000" />
     </bean>
+    
+     <!-- Define the Address bean -->
+    <bean id="address1" class="com.springcore.autowire.annotation.Address">
+        <property name="street" value="123 Main St" />
+        <property name="city" value="Doha Qatar" />
+        <property name="zipCode" value="00000" />
+    </bean>
 
     <!-- Define the  Employee bean and autowire by type -->
     <bean id="employee" class="com.springcore.autowire.annotation.Employee" />
