@@ -24,6 +24,8 @@
          <value>456 Rayyan</value>
          <value>789 Wakra</value>
     </util:list>
+    
+    <bean class="com.springcore.stereotype.Teacher" id="teacher" scope=""/>
  
 
 </beans>
