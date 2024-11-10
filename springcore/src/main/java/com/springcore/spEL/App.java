@@ -27,6 +27,8 @@ public class App {
         System.out.println("Result of 10 + 20: " + result1);
         
         
+        
+        
 
         // Close the context to release resources
         ((ClassPathXmlApplicationContext) context).close();

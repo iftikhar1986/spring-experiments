@@ -12,6 +12,15 @@ public class Demo {
     @Value("#{18 + 7}")  // Using SpEL to calculate and set the value
     private int y;
 
+    @Value("#{T(java.lang.Math).sqrt(25)}")  // Using SpEL to calculate z as the square root of 25
+    private double z;
+
+    @Value("#{T(java.lang.Math).E}")  // Using SpEL to set e to Euler's number
+    private double e;
+
+    @Value("#{ new java.lang.String('Syed Iftikhar')}")  // Setting a fixed string value using SpEL
+    private String name;
+
     // No-argument constructor
     public Demo() {}
 
@@ -35,12 +44,45 @@ public class Demo {
         this.y = y;
     }
 
-    // Optional: Override toString for easy display
+    // Getter for z
+    public double getZ() {
+        return z;
+    }
+
+    // Setter for z
+    public void setZ(double z) {
+        this.z = z;
+    }
+
+    // Getter for e
+    public double getE() {
+        return e;
+    }
+
+    // Setter for e
+    public void setE(double e) {
+        this.e = e;
+    }
+
+    // Getter for name
+    public String getName() {
+        return name;
+    }
+
+    // Setter for name
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Override toString for easy display
     @Override
     public String toString() {
         return "Demo{" +
                 "x=" + x +
                 ", y=" + y +
+                ", z=" + z +
+                ", e=" + e +
+                ", name='" + name + '\'' +
                 '}';
     }
 }
