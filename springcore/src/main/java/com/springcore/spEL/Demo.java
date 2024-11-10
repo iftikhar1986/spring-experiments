@@ -21,6 +21,9 @@ public class Demo {
     @Value("#{ new java.lang.String('Syed Iftikhar')}")  // Setting a fixed string value using SpEL
     private String name;
 
+    @Value("#{true}")  // Using SpEL to set a fixed boolean value for isActive
+    private boolean isActive;
+
     // No-argument constructor
     public Demo() {}
 
@@ -74,6 +77,16 @@ public class Demo {
         this.name = name;
     }
 
+    // Getter for isActive
+    public boolean isActive() {
+        return isActive;
+    }
+
+    // Setter for isActive
+    public void setActive(boolean isActive) {
+        this.isActive = isActive;
+    }
+
     // Override toString for easy display
     @Override
     public String toString() {
@@ -83,6 +96,7 @@ public class Demo {
                 ", z=" + z +
                 ", e=" + e +
                 ", name='" + name + '\'' +
+                ", isActive=" + isActive +
                 '}';
     }
 }
