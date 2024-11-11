@@ -20,8 +20,11 @@ public class StudentDaoImpl implements StudentDao {
         return result;
     }
 	public int update(Student student) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		 // Update an existing student record
+        String sql = "UPDATE student SET name = ?, city = ? WHERE id = ?";
+        int result = jdbcTemplate.update(sql, student.getName(), student.getCity(), student.getId());
+		return result;
 	}
 
 	public int delete(int id) {
