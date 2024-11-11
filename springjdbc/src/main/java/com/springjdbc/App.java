@@ -1,13 +1,40 @@
 package com.springjdbc;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.springjdbc.dao.StudentDao;
+import com.springjdbc.entities.Student;
+
+public class App {
+
+    public static void main(String[] args) {
+
+        System.out.println("Program Started.....!");
+
+        // Load the Spring context from the XML configuration file
+        ApplicationContext context = new ClassPathXmlApplicationContext("com/springjdbc/applicationContext.xml");
+
+        // Get the StudentDao bean from the context
+        StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
+
+        // Create a new student object
+        Student student = new Student(); 
+        student.setId(113);
+        student.setName("Syed Hussain");
+        student.setCity("Wakra");
+
+        // Insert the new student into the database
+        int result = studentDao.insert(student);
+
+        // Check the result of the insert operation
+        if (result > 0) {
+            System.out.println("A new student has been inserted successfully!");
+        } else {
+            System.out.println("Failed to insert the student.");
+        }
+
+        // Close the Spring context
+        ((ClassPathXmlApplicationContext) context).close();
     }
 }

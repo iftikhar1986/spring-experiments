@@ -44,6 +44,12 @@
     <!-- Define JdbcTemplate bean, referencing the DataSource using p schema -->
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" p:dataSource-ref="dataSource" />
     
+    
+    <!-- Define the StudentDaoImpl bean and inject JdbcTemplate -->
+    <bean id="studentDao" class="com.springjdbc.dao.StudentDaoImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+    
    
   
 
