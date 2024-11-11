@@ -36,20 +36,34 @@ public class App {
 
         
      // Update a student object
-        Student student = new Student(); 
-        student.setId(111);
-        student.setName("Syed Iftikhar Bukari");
-        student.setCity("Al-Wakra");
-        
-        int result = studentDao.update(student);
-        
-        
-     // Check if the result is updated 
-      if (result > 0) {
-          System.out.println("A student has been Updated successfully!");
-      } else {
-          System.out.println("Failed to Update the student.");
-      }
+//        Student student = new Student(); 
+//        student.setId(111);
+//        student.setName("Syed Iftikhar Bukari");
+//        student.setCity("Al-Wakra");
+//        
+//        int result = studentDao.update(student);
+//        
+//        
+//     // Check if the result is updated 
+//      if (result > 0) {
+//          System.out.println("A student has been Updated successfully!");
+//      } else {
+//          System.out.println("Failed to Update the student.");
+//      }
+      
+      
+      // Delete a student object
+      
+      
+      int result = studentDao.delete(113);
+      
+      
+   // Check if the result is updated 
+    if (result > 0) {
+        System.out.println("A student has been Deleted successfully!");
+    } else {
+        System.out.println("Failed to Delete the student.");
+    }
         
         
         

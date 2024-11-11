@@ -28,8 +28,11 @@ public class StudentDaoImpl implements StudentDao {
 	}
 
 	public int delete(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		 // Delete a student record by id
+        String sql = "DELETE FROM student WHERE id = ?";
+        int result = jdbcTemplate.update(sql, id);
+		return result;
 	}
 
 	public Student getStudent(int id) {
