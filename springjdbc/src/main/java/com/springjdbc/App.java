@@ -1,5 +1,7 @@
 package com.springjdbc;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -68,13 +70,25 @@ public class App {
 //    
 
         
-      Student student =  studentDao.getStudent(112);
-    
- // Check if the result is updated 
- 
-      System.out.println(student);
+//      Student student =  studentDao.getStudent(112);
+//    
+// // Check if the result is updated 
+// 
+//      System.out.println(student);
   
         
+     // Retrieve all students
+//        System.out.println("List of all students:");
+//        studentDao.getAllStudents().forEach(System.out::println);
+        
+        
+     // Retrieve and print all students
+        List<Student> students = studentDao.getAllStudents();
+        System.out.println("List of all students:");
+        for (Student s : students) {
+            System.out.println(s);
+        }
+
         
         
         // Close the Spring context
