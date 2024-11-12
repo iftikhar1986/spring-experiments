@@ -3,6 +3,7 @@ package com.springjdbc.dao;
 import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
 import com.springjdbc.entities.Student;
 
@@ -35,9 +36,14 @@ public class StudentDaoImpl implements StudentDao {
 		return result;
 	}
 
-	public Student getStudent(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Student getStudent(int id) { 
+		
+		  // Get a student by id
+        String sql = "SELECT * FROM student WHERE id = ?";
+        RowMapper<Student> rowMapper =  new RowMapperImpl();
+        
+        Student result = jdbcTemplate.queryForObject(sql, rowMapper, id);
+		return result;
 	}
 
 	public List<Student> getAllStudents() {

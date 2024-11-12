@@ -54,16 +54,26 @@ public class App {
       
       // Delete a student object
       
-      
-      int result = studentDao.delete(113);
-      
-      
-   // Check if the result is updated 
-    if (result > 0) {
-        System.out.println("A student has been Deleted successfully!");
-    } else {
-        System.out.println("Failed to Delete the student.");
-    }
+//      
+//      int result = studentDao.delete(113);
+//      
+//      
+//   // Check if the result is updated 
+//    if (result > 0) {
+//        System.out.println("A student has been Deleted successfully!");
+//    } else {
+//        System.out.println("Failed to Delete the student.");
+//    }
+//    
+//    
+
+        
+      Student student =  studentDao.getStudent(112);
+    
+ // Check if the result is updated 
+ 
+      System.out.println(student);
+  
         
         
         
